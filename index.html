@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Etmaad Marriage Bureau </title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    :root {
+      --deep-green: #0f5a28;
+      --accent-green: #3fa743;
+      --soft-cream: #f5efe3;
+      --rich-gold: #d4af37;
+      --ink: #0a1a16;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(180deg, #dbe6ff 0%, var(--soft-cream) 40%);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+
+    header {
+      background: radial-gradient(circle at top, #57c16a 0%, var(--deep-green) 60%);
+      color: #fff;
+      padding: 1rem 5vw;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .header-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1.5rem;
+      justify-content: space-between;
+    }
+
+    .logo-wrap {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      padding: 0.4rem;
+      background: rgba(255, 255, 255, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(4px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+    }
+
+    .logo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 50%;
+      background: #fff;
+      padding: 0.5rem;
+    }
+
+    .header-brand {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .header-brand h1 {
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      margin: 0;
+      letter-spacing: 0.05em;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 999px;
+      font-weight: 500;
+      transition: background 0.3s;
+      border: 1px solid transparent;
+    }
+
+    nav a:hover,
+    nav a.active {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .header-socials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+      margin-left: auto;
+    }
+
+    .header-socials a {
+      color: #fff;
+      text-decoration: none;
+      padding: 0.5rem 0.8rem;
+      border-radius: 50%;
+      width: 38px;
+      height: 38px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 500;
+      transition: background 0.3s, transform 0.2s;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .header-socials a:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: translateY(-2px);
+      border-color: rgba(255, 255, 255, 0.5);
+    }
+
+    .header-socials a i {
+      font-size: 1.1rem;
+    }
+
+    .cta {
+      border: 2px solid var(--deep-green);
+      color: var(--deep-green);
+      padding: 0.85rem 1.8rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s, color 0.3s, transform 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .cta i {
+      font-size: 1.1rem;
+    }
+
+    .cta.primary {
+      background: var(--deep-green);
+      color: #fff;
+    }
+
+    .cta.primary:hover {
+      background: var(--accent-green);
+      border-color: var(--accent-green);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(15, 90, 40, 0.3);
+    }
+
+    .cta:hover {
+      background: var(--deep-green);
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(15, 90, 40, 0.2);
+    }
+
+    main {
+      padding: 3rem 5vw 4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
+
+    section {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 1.25rem;
+      padding: 2rem;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+      border: 1px solid rgba(15, 90, 40, 0.1);
+    }
+
+    section h2 {
+      color: var(--deep-green);
+      margin-bottom: 1.25rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-size: 1.35rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    section h2 i {
+      font-size: 1.2rem;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.75rem;
+    }
+
+    .about-card {
+      background: linear-gradient(135deg, rgba(245, 239, 227, 0.95), rgba(255, 255, 255, 0.95));
+      border-radius: 1.25rem;
+      padding: 1.75rem;
+      border: 1px solid rgba(15, 90, 40, 0.12);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(63, 167, 67, 0.15), transparent 55%);
+      pointer-events: none;
+    }
+
+    .about-card strong {
+      color: var(--deep-green);
+      letter-spacing: 0.05em;
+    }
+
+    .about-pillars {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .pillar {
+      display: flex;
+      gap: 0.85rem;
+      align-items: flex-start;
+    }
+
+    .pillar span {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: rgba(63, 167, 67, 0.15);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: var(--deep-green);
+      font-size: 0.9rem;
+    }
+
+    .pillar p {
+      margin: 0;
+    }
+
+    .hero-section {
+      
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, var(--soft-cream) 50%, rgba(63, 167, 67, 0.08) 100%);
+      color: var(--ink);
+      padding: 4rem 5vw;
+      text-align: center;
+      margin-bottom: 3rem;
+      border-radius: 0 0 2rem 2rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 30% 20%, rgba(63, 167, 67, 0.06), transparent 50%);
+      pointer-events: none;
+    }
+
+    .hero-section > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-section h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 1rem;
+      letter-spacing: 0.08em;
+      color: var(--deep-green);
+      font-weight: 700;
+    }
+
+    .hero-section p {
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--ink);
+      opacity: 0.9;
+    }
+    .achievements {
+  padding: 60px 5vw;
+  background: #fff;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--deep-green);
+  margin-bottom: 30px;
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.achievements-grid img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.achievements-grid img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .service-card {
+      background: linear-gradient(145deg, rgba(63, 167, 67, 0.12), rgba(15, 90, 40, 0.08));
+      border-radius: 1rem;
+      padding: 1.5rem;
+      border: 1px solid rgba(15, 90, 40, 0.12);
+    }
+
+    .service-card h3 {
+      color: var(--deep-green);
+      margin-bottom: 0.5rem;
+    }
+
+    .stats-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .stat {
+      flex: 1;
+      min-width: 180px;
+      background: #fff;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      border: 1px solid rgba(15, 90, 40, 0.12);
+      text-align: center;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 2rem;
+      color: var(--accent-green);
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .contact-card {
+      background: #fff;
+      border-radius: 1rem;
+      padding: 1rem 1.25rem;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .hq-info {
+      background: linear-gradient(135deg, rgba(63, 167, 67, 0.1), rgba(15, 90, 40, 0.05));
+      border-radius: 1rem;
+      padding: 1.5rem;
+      border: 1px solid rgba(15, 90, 40, 0.15);
+      margin-bottom: 2rem;
+    }
+
+    .hq-info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .hq-info-item strong {
+      display: block;
+      font-size: 1.1rem;
+      color: var(--deep-green);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .hq-info-item strong i {
+      margin-right: 0.5rem;
+      font-size: 1rem;
+    }
+
+    .contact-card span i {
+      margin-right: 0.4rem;
+      font-size: 0.85rem;
+    }
+
+    .footer-section p strong i {
+      margin-right: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+    .map-container {
+      width: 100%;
+      height: 450px;
+      border-radius: 1.25rem;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(15, 90, 40, 0.1);
+      margin-top: 1.5rem;
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    .location-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .location-card {
+      background: linear-gradient(135deg, rgba(63, 167, 67, 0.08), rgba(245, 239, 227, 0.5));
+      border-radius: 1rem;
+      padding: 1.5rem;
+      border: 1px solid rgba(15, 90, 40, 0.1);
+    }
+
+    .location-card h3 {
+      color: var(--deep-green);
+      margin-bottom: 0.75rem;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .location-card p {
+      margin: 0;
+      color: var(--ink);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .map-container {
+        height: 350px;
+      }
+    }
+
+    .hq-info-item p {
+      margin: 0;
+      color: var(--ink);
+    }
+
+    .contact-card span {
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--deep-green);
+    }
+
+    .contact-card a {
+      color: var(--ink);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.3s;
+    }
+
+    .contact-card a:hover {
+      color: var(--deep-green);
+    }
+
+    .contact-card a i {
+      font-size: 1rem;
+      width: 16px;
+      text-align: center;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      background: var(--soft-cream);
+      padding: 1.5rem;
+      border-radius: 1.25rem;
+      border: 1px solid rgba(15, 90, 40, 0.12);
+    }
+
+    form label {
+      font-size: 0.9rem;
+      color: var(--deep-green);
+      letter-spacing: 0.05em;
+    }
+
+    form input,
+    form textarea {
+      padding: 0.85rem 1rem;
+      border-radius: 0.85rem;
+      border: 1px solid rgba(15, 90, 40, 0.2);
+      font-size: 1rem;
+      outline: none;
+      background: #fff;
+    }
+
+    form textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    form button {
+      border: none;
+      border-radius: 999px;
+      background: var(--deep-green);
+      color: #fff;
+      padding: 0.95rem;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.3s;
+    }
+
+    form button:hover {
+      opacity: 0.85;
+    }
+    #reviews {
+  padding: 3rem 5vw;
+  background: #f5f5f5;
+  border-radius: 1.5rem;
+}
+
+#reviews h2 {
+  text-align: center;
+  color: var(--deep-green);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.reviews-slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 1.5rem;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 1rem;
+}
+
+.review-card {
+  min-width: 280px;
+  background: #fff;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  scroll-snap-align: start;
+  flex-shrink: 0;
+}
+
+.review-card .stars {
+  font-size: 1.1rem;
+  color: #f1c40f;
+  margin-bottom: 0.5rem;
+}
+
+.review-card p {
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+}
+
+.review-card strong {
+  color: var(--deep-green);
+  font-size: 0.9rem;
+}
+
+.reviews-slider::-webkit-scrollbar {
+  display: none;
+}
+.reviews-slider {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+
+    footer {
+      background: radial-gradient(circle at top, #57c16a 0%, var(--deep-green) 60%);
+      color: #fff;
+      padding: 3rem 5vw 2rem;
+      margin-top: 4rem;
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-section h3 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      letter-spacing: 0.05em;
+    }
+
+    .footer-section p,
+    .footer-section a {
+      color: rgba(255, 255, 255, 0.9);
+      text-decoration: none;
+      line-height: 1.8;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-section a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    .footer-section a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .footer-section a i {
+      font-size: 0.9rem;
+      width: 16px;
+      text-align: center;
+    }
+
+    .footer-socials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .footer-socials a {
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 0.7rem 1.2rem;
+      border-radius: 999px;
+      font-weight: 500;
+      transition: background 0.3s, transform 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: rgba(255, 255, 255, 0.9);
+      text-decoration: none;
+    }
+
+    .footer-socials a i {
+      font-size: 1.1rem;
+      width: 18px;
+      text-align: center;
+    }
+
+    .footer-socials a:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: translateY(-2px);
+      text-decoration: none;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div class="header-brand">
+        <div class="logo-wrap">
+          <img src="1.jpeg" alt="Etmaad Marriage Bureau Logo">
+        </div>
+        <h1>Etmaad Marriage Bureau</h1>
+      </div>
+      <nav>
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact Us</a>
+        <a href="#location">Location</a>
+      </nav>
+      <div class="header-socials">
+        <a href="https://wa.me/923498787900" target="_blank" rel="noopener" title="WhatsApp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://www.instagram.com/etmaadmarriagebureau/?igsh=MW1nYTV1bjNia3dxYg%3D%3D#" target="_blank" rel="noopener" title="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.facebook.com/share/1eLWGZa1Hc/" target="_blank" rel="noopener" title="Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="mailto:etmaadmarriagebureau@gmail.com" title="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero-section" id="home">
+    <h1>Trusted Match-Making Services</h1>
+    <p>Trusted match-making across Pakistan and the global diaspora. Our dedicated consultants pair tradition with modern insights to help families connect with confidence, respect, and privacy.</p>
+  </section>
+
+  <main>
+    <section class="about" id="about">
+      <div class="about-card">
+        <h2>About</h2>
+        <p>Led by Ch. Naeem Bhullar and Mrs. Humera Bhullar, Etmaad Marriage Bureau & Consultancy combines decades of community trust with curated profiling, confidential interviews, and hands-on guidance.</p>
+        <p>Our consultants advocate for cultural respect, confidential data handling, and elegant presentation for every proposal.</p>
+        
+        <p style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 2px solid rgba(15, 90, 40, 0.1);"><strong style="color: var(--deep-green); font-size: 1.1rem;">Our Comprehensive Services:</strong></p>
+        <p style="line-height: 1.8;">Etmaad Marriage Bureau offers a range of services, including personalized matchmaking, pre-marital counseling, and background verification. We often utilize advanced technology, such as matchmaking algorithms and database management, to streamline the search for compatible matches. Additionally, we organize events, social gatherings, and one-on-one meetings to facilitate introductions between potential partners.</p>
+      </div>
+      <div class="about-card about-pillars">
+        <div class="pillar">
+          <span>01</span>
+          <p><strong>Personalized Discovery</strong><br>Deep-dive consultations and profile curation to understand every family's priorities.</p>
+        </div>
+        <div class="pillar">
+          <span>02</span>
+          <p><strong>Verification & Trust</strong><br>Confidential background vetting with transparent communication at every milestone.</p>
+        </div>
+        <div class="pillar">
+          <span>03</span>
+          <p><strong>Negotiation Support</strong><br>Facilitated conversations to harmonize expectations and timelines for both families.</p>
+        </div>
+      </div>
+    </section>
+    <!-- ACHIEVEMENTS SECTION START -->
+<section class="achievements">
+  <h2 class="section-title">Our Achievements</h2>
+
+  <div class="achievements-grid">
+
+    <!-- Yahan 4 se 48 images -->
+    <img src="4.jpeg" alt="">
+    <img src="5.jpeg" alt="">
+    <img src="6.jpeg" alt="">
+    <img src="7.jpeg" alt="">
+    <img src="8.jpeg" alt="">
+    <img src="9.jpeg" alt="">
+    <img src="10.jpeg" alt="">
+    <img src="11.jpeg" alt="">
+    <img src="12.jpeg" alt="">
+    <img src="13.jpeg" alt="">
+    <img src="14.jpeg" alt="">
+    <img src="15.jpeg" alt="">
+    <img src="16.jpeg" alt="">
+    <img src="17.jpeg" alt="">
+    <img src="18.jpeg" alt="">
+    <img src="19.jpeg" alt="">
+    <img src="20.jpeg" alt="">
+    <img src="21.jpeg" alt="">
+    <img src="22.jpeg" alt="">
+    <img src="23.jpeg" alt="">
+    <img src="24.jpeg" alt="">
+    <img src="25.jpeg" alt="">
+    <img src="26.jpeg" alt="">
+    <img src="27.jpeg" alt="">
+    <img src="28.jpeg" alt="">
+    <img src="29.jpeg" alt="">
+    <img src="30.jpeg" alt="">
+    <img src="31.jpeg" alt="">
+    <img src="32.jpeg" alt="">
+    <img src="33.jpeg" alt="">
+    <img src="34.jpeg" alt="">
+    <img src="35.jpeg" alt="">
+    <img src="36.jpeg" alt="">
+    <img src="37.jpeg" alt="">
+    <img src="38.jpeg" alt="">
+    <img src="39.jpeg" alt="">
+    <img src="40.jpeg" alt="">
+    <img src="41.jpeg" alt="">
+    <img src="42.jpeg" alt="">
+    <img src="43.jpeg" alt="">
+    <img src="44.jpeg" alt="">
+    <img src="45.jpeg" alt="">
+    <img src="46.jpeg" alt="">
+    <img src="47.jpeg" alt="">
+    <img src="48.jpeg" alt="">
+
+  </div>
+</section>
+<!-- ACHIEVEMENTS SECTION END -->
+
+
+    <section id="services">
+      <h2>Services</h2>
+      <div class="services-grid">
+        <article class="service-card">
+          <h3>Elite Matchmaking</h3>
+          <p>Bespoke partner search tailored to education, profession, and family expectations.</p>
+        </article>
+        <article class="service-card">
+          <h3>Family Consultancy</h3>
+          <p>Guided sessions to align values, understand proposals, and evaluate compatibility.</p>
+        </article>
+        <article class="service-card">
+          <h3>Profile Branding</h3>
+          <p>Discreet profile crafting, highlighting achievements with cultural nuance.</p>
+        </article>
+        <article class="service-card">
+          <h3>International Outreach</h3>
+          <p>Connections for overseas Pakistanis seeking alliances grounded in shared heritage.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Impact in Numbers</h2>
+    
+      <div class="stats-row">
+    
+        <div class="stat">
+          <strong>500+</strong>
+          Successful Alliances
+        </div>
+    
+        <div class="stat">
+          <strong>9</strong>
+          Years of Trust
+        </div>
+    
+        <div class="stat">
+          <strong>Visiting Hours</strong>
+          Winter: Sat–Thu, 10 AM – 7 PM <br>
+          Summer: 9 AM – 9 PM
+        </div>
+    
+      </div>
+    </section>
+    
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      
+      <div class="hq-info">
+        <div class="hq-info-grid">
+          <div class="hq-info-item">
+            <strong><i class="fas fa-map-marker-alt"></i> HEAD Office</strong>
+            <p>Plaza #15, First Floor, Block-C, Montgomery Homes, Sahiwal, Punjab, Pakistan</p>
+          </div>
+          <div class="hq-info-item">
+            <strong><i class="fas fa-clock"></i> VISITING HOURS</strong>
+            <p>Saturday - Thursday 10:00 AM to 7:00 PM (By Appointment)</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-layout">
+        <div>
+          <div class="contact-grid">
+            <div class="contact-card">
+              <span>CEO</span>
+              Ch. Naeem Bhullar
+              <a href="tel:+923025936758"><i class="fas fa-phone"></i> +92 302 593 6758</a>
+            </div>
+            <div class="contact-card">
+              <span>Official WhatsApp</span>
+              Support Line
+              <a href="https://wa.me/923498787900" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> +92 349 878 7900</a>
+            </div>
+            <div class="contact-card">
+              <span>Consultant</span>
+              Mrs. Humera Bhullar
+              <a href="tel:+923236979303"><i class="fas fa-phone"></i> +92 323 697 9303</a>
+            </div>
+            <div class="contact-card">
+              <span>Email</span>
+              <a href="mailto:etmaadmarriagebureau@gmail.com"><i class="fas fa-envelope"></i> etmaadmarriagebureau@gmail.com</a>
+            </div>
+            <div class="contact-card">
+              <span><i class="fas fa-map-marker-alt"></i> Address</span>
+              Plaza #15, First Floor, Block-C<br>Montgomery Homes, Sahiwal<br>Punjab, Pakistan
+            </div>
+          </div>
+        </div>
+        <form>
+          <label for="name">Name</label>
+          <input id="name" type="text" placeholder="Your full name">
+
+          <label for="contact">Phone / WhatsApp</label>
+          <input id="contact" type="tel" placeholder="+92 ...">
+
+          <label for="message">Inquiry</label>
+          <textarea id="message" placeholder="Share your requirements or questions"></textarea>
+
+          <button type="submit">Request a Call Back</button>
+        </form>
+      </div>
+    </section>
+    <section id="reviews">
+      <h2>Client Reviews</h2>
+      <div class="reviews-slider">
+        <div class="review-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p>"Etmaad Marriage Bureau helped me find the perfect match. Very professional and confidential service!"</p>
+          <strong>- Aisha R.</strong>
+        </div>
+        <div class="review-card">
+          <div class="stars">⭐⭐⭐⭐</div>
+          <p>"Consultants were very understanding and guided us properly. Good experience overall."</p>
+          <strong>- Omar K.</strong>
+        </div>
+        <div class="review-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p>"Highly recommend! They made the whole process smooth and respectful."</p>
+          <strong>- Sana M.</strong>
+        </div>
+        <div class="review-card">
+          <div class="stars">⭐⭐⭐⭐</div>
+          <p>"The team was responsive and helped us throughout the process."</p>
+          <strong>- Ali H.</strong>
+        </div>
+        <div class="review-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p>"Excellent matchmaking services with full privacy and care."</p>
+          <strong>- Hina S.</strong>
+        </div>
+        <div class="review-card">
+          <div class="stars">⭐⭐⭐⭐</div>
+          <p>"They guided us well and ensured both families were comfortable."</p>
+          <strong>- Bilal Q.</strong>
+        </div>
+        <div class="review-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p>"Professional, reliable, and very helpful throughout. Highly recommended!"</p>
+          <strong>- Maryam F.</strong>
+        </div>
+        <div class="review-card">
+          <div class="stars">⭐⭐⭐⭐</div>
+          <p>"Good service, polite consultants, and clear communication."</p>
+          <strong>- Kamran T.</strong>
+        </div>
+        <div class="review-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p>"Etmaad made the process of finding a match stress-free and trustworthy."</p>
+          <strong>- Nadia A.</strong>
+        </div>
+        <div class="review-card">
+          <div class="stars">⭐⭐⭐⭐</div>
+          <p>"Very helpful, detailed, and organized service. Highly appreciated."</p>
+          <strong>- Fahad M.</strong>
+        </div>
+      </div>
+    </section>
+    
+
+    <!-- Google Map Section -->
+<section id="location" style="padding: 40px 0; background: #fff;">
+  <h2 style="text-align:center; margin-bottom:20px; font-size:28px; color:#0f5a28;">
+    Our Location
+  </h2>
+
+  <div style="display:flex; justify-content:center;">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d219646.8417764581!2d72.79937034408691!3d30.662638102200408!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4862a33c8c43b71b%3A0xe8d13b1e2030eb81!2sEtmaad%20Marriage%20Bureau!5e0!3m2!1sen!2s!4v1764235840922!5m2!1sen!2s" 
+      width="100%" 
+      height="450" 
+      style="border:0; max-width:900px;" 
+      allowfullscreen="" 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</section>
+
+      
+      <!-- Note: To get the exact embed code with precise location:
+           1. Go to https://www.google.com/maps
+           2. Search for: Plaza 15 Montgomery Homes Sahiwal Punjab Pakistan
+           3. Click Share > Embed a map
+           4. Copy the iframe src URL and replace the one above
+      -->
+
+      
+    
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>About Us</h3>
+        <p>Led by Ch. Naeem Bhullar and Mrs. Humera Bhullar, Etmaad Marriage Bureau & Consultancy combines decades of community trust with curated profiling, confidential interviews, and hands-on guidance.</p>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact Us</a>
+        <a href="#location">Location</a>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Contact Information</h3>
+        <p><strong><i class="fas fa-map-marker-alt"></i> Head Quarter:</strong><br>Plaza #15, First Floor, Block-C<br>Montgomery Homes, Sahiwal<br>Punjab, Pakistan</p>
+        <p>
+          <strong><i class="fas fa-clock"></i> Visiting Hours:</strong><br>
+          Saturday - Thursday<br>
+          Winter: 10:00 AM – 7:00 PM<br>
+          Summer: 9:00 AM – 9:00 PM<br>
+          (By Appointment)
+        </p>
+              </div>
+      
+      <div class="footer-section">
+        <h3>Connect With Us</h3>
+        <div class="footer-socials">
+          <a href="https://wa.me/923498787900" target="_blank" rel="noopener">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+          </a>
+          <a href="https://www.instagram.com/etmaadmarriagebureau/?igsh=MW1nYTV1bjNia3dxYg%3D%3D#" target="_blank" rel="noopener">
+            <i class="fab fa-instagram"></i> Instagram
+          </a>
+          <a href="https://www.facebook.com/share/1eLWGZa1Hc/" target="_blank" rel="noopener">
+            <i class="fab fa-facebook"></i> Facebook
+          </a>
+          <a href="mailto:etmaadmarriagebureau@gmail.com">
+            <i class="fas fa-envelope"></i> Email
+          </a>
+        </div>
+        <p style="margin-top: 1rem;">
+          <strong>CEO:</strong> Ch. Naeem Bhullar<br>
+          <a href="tel:+923025936758"><i class="fas fa-phone"></i> +92 302 593 6758</a>
+        </p>
+        <p>
+          <strong>Consultant:</strong> Mrs. Humera Bhullar<br>
+          <a href="tel:+923236979303"><i class="fas fa-phone"></i> +92 323 697 9303</a>
+        </p>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2025 Etmaad Marriage Bureau & Consultancy. All rights reserved.</p>
+    </div>
+  </footer>
+  
+</body>
+</html>
+
