@@ -11,18 +11,13 @@
       --accent-green: #3fa743;
       --soft-
    
+/* UNIVERSAL FIX FOR ALL IMAGES ON THE WEBSITE */
 img {
-  width: 120px;
-  height: 200px; /* fixed height to maintain full body ratio */
-  object-fit: cover; /* makes image look full natural */
-  object-position: top; /* focuses on upper body (face visible) */
-  border-radius: 8px;
-}
-    .profile-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; 
-  object-position: top; 
+  width: 100%;          /* full width */
+  height: 200px;        /* fixed height so all images look same */
+  object-fit: cover;    /* no half-body */
+  object-position: top; /* face always visible */
+  border-radius: 10px;  /* optional – looks clean */
 }
 
 cream: #f5efe3;
@@ -1111,6 +1106,7 @@ cream: #f5efe3;
   
 </body>
 </html>
+
 
 
 
